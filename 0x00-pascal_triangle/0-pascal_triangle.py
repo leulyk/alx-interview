@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
     Implementation of Pascal's triangle
 """
