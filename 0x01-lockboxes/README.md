@@ -11,3 +11,28 @@
 - There can be keys that do not have boxes
 - The first box boxes[0] is unlocked
 - Return True if all boxes can be opened, else return False
+
+## Example
+
+```
+leulyk:~/0x01-lockboxes$ cat 0-main.py
+#!/usr/bin/python3
+
+canUnlockAll = __import__('0-lockboxes').canUnlockAll
+
+boxes = [[1], [2], [3], [4], []]
+print(canUnlockAll(boxes))
+
+boxes = [[1, 4, 6], [2], [0, 4, 1], [5, 6, 2], [3], [4, 1], [6]]
+print(canUnlockAll(boxes))
+
+boxes = [[1, 4], [2], [0, 4, 1], [3], [], [4, 1], [5, 6]]
+print(canUnlockAll(boxes))
+
+leulyk:~/0x01-lockboxes$ ./0-main.py
+True
+True
+False
+
+leulyk:~/0x01-lockboxes$
+```
