@@ -1,4 +1,4 @@
-# Lockboxes
+# [Lockboxes](https://github.com/leulyk/alx-interview/blob/main/0x01-lockboxes/README.md)
 
 ## Problem
 
