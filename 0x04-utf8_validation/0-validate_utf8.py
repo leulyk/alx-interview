@@ -8,7 +8,7 @@ def validUTF8(data):
     count = 0
     for c in data:
         if count == 0:
-            if (c >> 5) == 0b110:
+            if (c >> 5) == 0b110 or (c >> 5) == 0b1110:
                 count = 1
             elif (c >> 4) == 0b1110:
                 count = 2
