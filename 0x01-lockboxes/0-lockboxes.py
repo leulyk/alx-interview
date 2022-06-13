@@ -15,12 +15,23 @@ def canUnlockAll(boxes):
         The first box boxes[0] is unlocked.
         Return True if all boxes can be opened, else return False.
     """
-    unlocked = [False for i in range(len(boxes))]
-    unlocked[0] = True
-    for idx in range(len(boxes)):
-        if unlocked[idx]:
-            for key in boxes[idx]:
-                unlocked[key] = True
-                for discovered_key in boxes[key]:
-                    unlocked[discovered_key] = True
-    return all(unlocked)
+    length = len(boxes)
+    keys = set()
+    opened = []
+    i = 0
+
+    while i < length:
+        temp = i
+        opened.append(i)
+        keys.update(boxes[i])
+        for key in keys:
+            if key != 0 and key < length and key not in opened:
+                i = key
+                break
+        if temp == i:
+            break
+
+    for i in range(length):
+        if i not in opened and i != 0:
+            return False
+    return True
